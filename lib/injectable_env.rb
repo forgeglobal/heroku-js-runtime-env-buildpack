@@ -25,7 +25,7 @@ class InjectableEnv
   end
 
   def self.replace(file, *args)
-    injectee = IO.read(file)
+    injectee = File.read(file)
     return unless placeholder = injectee.match(Placeholder)
     placeholder_size = placeholder.to_s.size
 
